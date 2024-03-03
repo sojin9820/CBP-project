@@ -121,7 +121,7 @@
 }
 .first-section-content {
   width: 290px;
-  height: 320px;
+  height: 280px;
   border: 1px solid var(--neutral--300);
 }
 .first-section-content .first-section-subtitle {
@@ -132,7 +132,7 @@
   color: #666666;
 }
 .first-section-content p {
-  padding-top: 30px;
+  padding-top: 20px;
   padding-left: 15px;
   padding-right: 15px;
   line-height: 120%;
@@ -141,6 +141,8 @@
   color: #9c9c9c;
 }
 .first-section-content img {
+  width: 60px;
+  height: 65px;
   padding-left: 10px;
   padding-top: 20px;
 }
@@ -270,8 +272,8 @@
   flex-wrap: nowrap;
 }
 .third-section img {
-  width: 1250px;
-  height: 620px;
+  width: 1150px;
+  height: 500px;
   padding-top: 60px;
 }
 

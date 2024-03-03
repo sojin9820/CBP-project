@@ -41,6 +41,17 @@ document.querySelectorAll(".first-section-content").forEach((content) => {
       img.dataset.originalSrc = img.src; // 원래 src를 저장
       img.src = hoverSrc;
     }
+
+    // a 태그 생성 및 설정 (각 요소에 설정된 data-url을 기반으로)
+    const targetUrl = this.getAttribute("data-url"); // 이 요소의 data-url 속성 값을 가져옴
+    let link = this.querySelector("a.dynamic-link");
+    if (!link) {
+      link = document.createElement("a");
+      link.href = targetUrl;
+      link.className = "dynamic-link";
+      link.style.display = "none";
+      this.appendChild(link);
+    }
   });
 
   content.addEventListener("mouseleave", function () {
@@ -48,6 +59,19 @@ document.querySelectorAll(".first-section-content").forEach((content) => {
     const img = this.querySelector("img");
     if (img && img.dataset.originalSrc) {
       img.src = img.dataset.originalSrc;
+    }
+
+    // 동적으로 추가된 링크 제거 또는 숨김 처리
+    const link = this.querySelector("a.dynamic-link");
+    if (link) {
+      link.style.display = "none";
+    }
+  });
+
+  content.addEventListener("click", function () {
+    const link = this.querySelector("a.dynamic-link");
+    if (link) {
+      window.location.href = link.href; // 클릭 시 링크로 이동
     }
   });
 });
